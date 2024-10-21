@@ -1,7 +1,7 @@
 #ifndef MyComp
 #define MyComp
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 struct Complex {
   double real, imag;
@@ -13,12 +13,13 @@ struct Complex {
     return Complex(real - b.real, imag - b.imag);
   }
   Complex operator*(const Complex& b) const {
-    return Complex(real * b.real - imag * b.imag, real * b.imag + imag * b.real);
+    return Complex(real * b.real - imag * b.imag,
+                   real * b.imag + imag * b.real);
   }
   Complex operator/(const Complex& b) const {
     double den = b.real * b.real + b.imag * b.imag;
     return Complex((real * b.real + imag * b.imag) / den,
-      (imag * b.real - real * b.imag) / den);
+                   (imag * b.real - real * b.imag) / den);
   }
   Complex operator/(const double b) const {
     return Complex(real / b, imag / b);
@@ -30,12 +31,11 @@ struct Complex {
     double Rt(real * real + imag * imag);
     return sqrt(Rt);
   }
-  double Delt(const Complex& x) const {
-    return (*this - x).ModV() / ModV();
+  double Delt(const Complex& x) const { return (*this - x).ModV() / ModV(); }
+  double DotMul(const Complex& x) const {
+    return (real * x.real) + (imag * x.imag);
   }
-  void Prt() {
-    printf("(%lf, %lf)\n", real, imag);
-  }
+  void Prt() { printf("(%lf, %lf)\n", real, imag); }
 };
 struct Dot {
   unsigned Time, Val;
