@@ -31,6 +31,7 @@ struct Complex {
     double Rt(real * real + imag * imag);
     return sqrt(Rt);
   }
+  bool operator<(const Complex& x) const { return ModV() < x.ModV(); }
   double Delt(const Complex& x) const { return (*this - x).ModV() / ModV(); }
   double DotMul(const Complex& x) const {
     return (real * x.real) + (imag * x.imag);
