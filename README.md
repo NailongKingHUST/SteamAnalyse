@@ -10,7 +10,7 @@ RTX4080 super O16G
 
 ## 反常数据
 
-### 免费喜加一
+### 限免
 
 - HITMAN 2
 
@@ -19,6 +19,42 @@ RTX4080 super O16G
 - Braveland
 
 <!-- 285800 -->
+
+- Murderous Pursuits
+
+<!-- 638070 -->
+
+- 夺命邮差
+
+<!-- 232770 -->
+
+- Hyperdrive Massacre
+
+<!-- 402390 -->
+
+- Gene Shift Auto
+
+<!-- 308600 -->
+
+- Kathy Rain
+
+<!-- 370910 -->
+
+- KHOLAT
+
+<!-- 343710 -->
+
+- The Tiny Bang Story
+
+<!-- 96000 -->
+
+- DISTRAINT: Deluxe Edition
+
+<!-- 395170 -->
+
+- Evolvation
+
+<!-- 510840 -->
 
 ## 整体曲线
 
@@ -59,6 +95,10 @@ __注意__：大数据体现在玩家数量和时间尺度，而不是分析的�
 <!-- 1818750 -->
 
 ### 反常数据
+
+- Capcom Arcade 2nd Stadium
+
+<!-- 1755910 -->
 
 - Life is Strange 2
 

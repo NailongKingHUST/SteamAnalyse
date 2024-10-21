@@ -4,7 +4,7 @@
 
 using namespace std;
 
-#define WEEK
+// #define WEEK
 #define IGNORE
 
 unsigned RD() {
@@ -41,7 +41,7 @@ signed main() {
   unsigned Lst[10005], Len = 0;
   freopen("../scraper/data.json", "r", stdin);
   do {
-    Lst[Len] = RD(), getchar(), *TmpC = getchar();
+    Lst[Len] = RD(), getchar(), * TmpC = getchar();
     // fprintf(stderr, "114514 %u %u\n", Lst[Len], *TmpC);
     // cin.getline(TmpC, 100);
     // string st;
@@ -50,7 +50,7 @@ signed main() {
     // fprintf(stderr, "TmpC %s\n", TmpC);
 #ifdef WEEK
     if (Lst[Len] == 2076040 || Lst[Len] == 1638720 || Lst[Len] == 1584640 ||
-        Lst[Len] == 1487290) {
+      Lst[Len] == 1487290) {
       Len--;  // skip no data
     }
 #endif
