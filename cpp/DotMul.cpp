@@ -5,6 +5,7 @@
 using namespace std;
 
 #define WEEK
+#define IGNORE
 
 struct DistL {
   unsigned NameA, NameB;
@@ -14,6 +15,21 @@ struct DistL {
 };
 signed main() {
 #ifdef WEEK
+  freopen("../scraper/data/week/ignore.txt", "r", stdin);
+#else
+  freopen("../scraper/data/max/ignore.txt", "r", stdin);
+#endif
+  set<unsigned> Ign;
+  unsigned A = 1;
+#ifdef IGNORE
+  while (A) {
+    scanf("%u", &A);
+    if (!A) break;
+    Ign.insert(A);
+  }
+#endif
+  fclose(stdin);
+#ifdef WEEK
   freopen("../weekLog.txt", "r", stdin);
   freopen("../weekMul.txt", "w", stdout);
 #else
@@ -22,13 +38,13 @@ signed main() {
 #endif
   map<unsigned, Complex> List;
   vector<DistL> Dists;
-  unsigned A = 1;
   Complex CA;
+  A = 1;
   while (A) {
     scanf("%u%lf%lf", &A, &(CA.real), &(CA.imag));
     // fprintf(stderr, "114514 %u %lf %lf\n", A, (CA.real), (CA.imag));
     // return 0;
-    List[A] = CA;
+    if (!(Ign.count(A))) List[A] = CA;
   }
   List.erase(0);
   for (auto i : List) {
@@ -36,7 +52,7 @@ signed main() {
     unsigned CurID = 0;
     for (auto j : List)
       if (i.first != j.first) {
-        CurD = i.second.Delt(j.second);
+        CurD = i.second.DotMul(j.second);
         if (CurD > CurMx) CurMx = CurD, CurID = j.first;
       }
     Dists.push_back({i.first, CurID, CurMx});
