@@ -4,7 +4,8 @@
 
 using namespace std;
 
-#define WEEK
+// #define WEEK
+#define IGNORE
 
 unsigned RD() {
   char CurC = getchar();
@@ -17,6 +18,24 @@ unsigned RD() {
 Complex FTonDay(const Dot* x, unsigned Len);
 signed main() {
   // freopen("../bin/Log.txt", "w", stdout);
+
+  set<unsigned> Ign;
+  unsigned A = 1;
+#ifdef WEEK
+  freopen("../weekignore.txt", "r", stdin);
+#else
+  freopen("../maxignore.txt", "r", stdin);
+#endif
+#ifdef IGNORE
+  while (A) {
+    scanf("%u", &A);
+    if (!A) break;
+    Ign.insert(A);
+  }
+#endif
+  fclose(stdin);
+  fprintf(stderr, "114514 %u\n", Ign.size());
+  // return 0;
   Dot CurLst[10005];
   char OpenFileName[105], TmpC[105];
   unsigned Lst[10005], Len = 0;
@@ -53,6 +72,7 @@ signed main() {
   freopen("../maxLog.txt", "w", stdout);
 #endif
   for (unsigned i(0); i < Len; ++i) {
+    if (Ign.count(Lst[i])) continue;
     unsigned Start, Step, Cnt = 0;
     char CurC;
     // printf("%s\n", OpenFileName);
@@ -118,6 +138,6 @@ signed main() {
   return 0;
 }
 /*
-g++ main.cpp -o ../bin/ft.exe
+g++ main.cpp -o ../bin/ft.exe -O3
 ../bin/ft.exe
 */

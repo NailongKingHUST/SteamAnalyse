@@ -15,9 +15,9 @@ struct DistL {
 };
 signed main() {
 #ifdef WEEK
-  freopen("../scraper/data/week/ignore.txt", "r", stdin);
+  freopen("../weekignore.txt", "r", stdin);
 #else
-  freopen("../scraper/data/max/ignore.txt", "r", stdin);
+  freopen("../maxignore.txt", "r", stdin);
 #endif
   set<unsigned> Ign;
   unsigned A = 1;
@@ -40,12 +40,14 @@ signed main() {
   vector<DistL> Dists;
   Complex CA;
   A = 1;
+  fprintf(stderr, "1919810\n");
   while (A) {
     scanf("%u%lf%lf", &A, &(CA.real), &(CA.imag));
-    // fprintf(stderr, "114514 %u %lf %lf\n", A, (CA.real), (CA.imag));
+    fprintf(stderr, "114514 %u %lf %lf\n", A, (CA.real), (CA.imag));
     // return 0;
     if (!(Ign.count(A))) List[A] = CA;
   }
+  fprintf(stderr, "114514\n");
   List.erase(0);
   for (auto i : List) {
     double CurMx(-1e9), CurD;
