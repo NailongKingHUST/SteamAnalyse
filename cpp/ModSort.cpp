@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// #define WEEK
+#define WEEK
 #define IGNORE
 
 signed main() {
